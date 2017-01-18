@@ -1,0 +1,124 @@
+﻿@model EmployeePages.Models.udReadEmployeeDetails_Result
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-theme.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width"/>
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>udReadEmployeeDetails_Result</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.FirstName)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.LastName)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.LastName)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Title)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Title)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Address)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Address)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Email)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Email)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Department)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Department)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Manager)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Manager)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Permission)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Permission)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Phone)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Phone)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.HireDate)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.HireDate)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Favorite_Color)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Favorite_Color)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Image)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Image)
+            </dd>
+            @Html.ActionLink("View changes", "Changes", new { id = Model.ID })f
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>
