@@ -35,7 +35,7 @@ namespace EmployeePages.Models
         public DbSet<Department> Departments { get; set; }
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Manager> Managers { get; set; }
-        public DbSet<Permission> Permissions { get; set; }
+        public DbSet<Permissions> Permissions1 { get; set; }
         public DbSet<Title> Titles { get; set; }
     
         public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)

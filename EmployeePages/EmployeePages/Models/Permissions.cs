@@ -12,10 +12,10 @@ namespace EmployeePages.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Permission
+    public partial class Permissions
     {
         public int EmpID { get; set; }
-        public string Permission1 { get; set; }
+        public string Permission { get; set; }
         public System.DateTime StartDate { get; set; }
         public Nullable<System.DateTime> EndDate { get; set; }
     

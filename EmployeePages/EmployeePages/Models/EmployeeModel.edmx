@@ -472,13 +472,13 @@
           <NavigationProperty Name="CVDepartment" Relationship="Self.FK_Manager_Department" FromRole="Manager" ToRole="CVDepartment" />
           <NavigationProperty Name="Employee" Relationship="Self.FK_Manager_Employee" FromRole="Manager" ToRole="Employee" />
         </EntityType>
-        <EntityType Name="Permission">
+        <EntityType Name="Permissions">
           <Key>
             <PropertyRef Name="EmpID" />
-            <PropertyRef Name="Permission1" />
+            <PropertyRef Name="Permission" />
           </Key>
           <Property Name="EmpID" Type="Int32" Nullable="false" />
-          <Property Name="Permission1" Type="String" MaxLength="30" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Permission" Type="String" MaxLength="30" FixedLength="true" Unicode="false" Nullable="false" />
           <Property Name="StartDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="EndDate" Type="DateTime" Precision="3" />
           <NavigationProperty Name="CVPermission" Relationship="Self.FK_Permissions_CVPermissions" FromRole="Permissions" ToRole="CVPermissions" />
@@ -534,13 +534,13 @@
         </Association>
         <Association Name="FK_Permissions_CVPermissions">
           <End Role="CVPermissions" Type="Self.CVPermission" Multiplicity="1" />
-          <End Role="Permissions" Type="Self.Permission" Multiplicity="*" />
+          <End Role="Permissions" Type="EmployeesModel.Permissions" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="CVPermissions">
               <PropertyRef Name="Name" />
             </Principal>
             <Dependent Role="Permissions">
-              <PropertyRef Name="Permission1" />
+              <PropertyRef Name="Permission" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -582,7 +582,7 @@
         </Association>
         <Association Name="FK_Permissions_Employee">
           <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
-          <End Role="Permissions" Type="Self.Permission" Multiplicity="*" />
+          <End Role="Permissions" Type="EmployeesModel.Permissions" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Employee">
               <PropertyRef Name="ID" />
@@ -612,7 +612,7 @@
           <EntitySet Name="Departments" EntityType="Self.Department" />
           <EntitySet Name="Employees" EntityType="Self.Employee" />
           <EntitySet Name="Managers" EntityType="Self.Manager" />
-          <EntitySet Name="Permissions" EntityType="Self.Permission" />
+          <EntitySet Name="Permissions1" EntityType="EmployeesModel.Permissions" />
           <EntitySet Name="Titles" EntityType="Self.Title" />
           <AssociationSet Name="FK_Employee_Address" Association="Self.FK_Employee_Address">
             <End Role="Address" EntitySet="Addresses" />
@@ -628,7 +628,7 @@
           </AssociationSet>
           <AssociationSet Name="FK_Permissions_CVPermissions" Association="Self.FK_Permissions_CVPermissions">
             <End Role="CVPermissions" EntitySet="CVPermissions" />
-            <End Role="Permissions" EntitySet="Permissions" />
+            <End Role="Permissions" EntitySet="Permissions1" />
           </AssociationSet>
           <AssociationSet Name="FK_Title_CVTitle" Association="Self.FK_Title_CVTitle">
             <End Role="CVTitle" EntitySet="CVTitles" />
@@ -644,7 +644,7 @@
           </AssociationSet>
           <AssociationSet Name="FK_Permissions_Employee" Association="Self.FK_Permissions_Employee">
             <End Role="Employee" EntitySet="Employees" />
-            <End Role="Permissions" EntitySet="Permissions" />
+            <End Role="Permissions" EntitySet="Permissions1" />
           </AssociationSet>
           <AssociationSet Name="FK_Title_Employee" Association="Self.FK_Title_Employee">
             <End Role="Employee" EntitySet="Employees" />
@@ -969,11 +969,11 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Permissions">
-            <EntityTypeMapping TypeName="EmployeesModel.Permission">
+          <EntitySetMapping Name="Permissions1">
+            <EntityTypeMapping TypeName="EmployeesModel.Permissions">
               <MappingFragment StoreEntitySet="Permissions">
                 <ScalarProperty Name="EmpID" ColumnName="EmpID" />
-                <ScalarProperty Name="Permission1" ColumnName="Permission" />
+                <ScalarProperty Name="Permission" ColumnName="Permission" />
                 <ScalarProperty Name="StartDate" ColumnName="StartDate" />
                 <ScalarProperty Name="EndDate" ColumnName="EndDate" />
               </MappingFragment>

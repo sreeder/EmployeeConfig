@@ -16,11 +16,11 @@ namespace EmployeePages.Models
     {
         public CVPermission()
         {
-            this.Permissions = new HashSet<Permission>();
+            this.Permissions = new HashSet<Permissions>();
         }
     
         public string Name { get; set; }
     
-        public virtual ICollection<Permission> Permissions { get; set; }
+        public virtual ICollection<Permissions> Permissions { get; set; }
     }
 }

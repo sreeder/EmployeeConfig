@@ -12,7 +12,7 @@
         <EntityTypeShape EntityType="EmployeesModel.Department" Width="1.5" PointX="0.625" PointY="3.875" IsExpanded="true" />
         <EntityTypeShape EntityType="EmployeesModel.Employee" Width="1.5" PointX="4.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="EmployeesModel.Manager" Width="1.5" PointX="4.5" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EmployeesModel.Permission" Width="1.5" PointX="2.625" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeesModel.Permissions" Width="1.5" PointX="2.625" PointY="6" IsExpanded="true" />
         <EntityTypeShape EntityType="EmployeesModel.Title" Width="1.5" PointX="7.875" PointY="5.375" IsExpanded="true" />
         <AssociationConnector Association="EmployeesModel.FK_Employee_Address" ManuallyRouted="false" />
         <AssociationConnector Association="EmployeesModel.FK_Employee_Department_Department" ManuallyRouted="false" />

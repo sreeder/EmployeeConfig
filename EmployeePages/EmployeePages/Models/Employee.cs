@@ -18,7 +18,7 @@ namespace EmployeePages.Models
         {
             this.Departments = new HashSet<Department>();
             this.Managers = new HashSet<Manager>();
-            this.Permissions = new HashSet<Permission>();
+            this.Permissions = new HashSet<Permissions>();
             this.Titles = new HashSet<Title>();
         }
     
@@ -36,7 +36,7 @@ namespace EmployeePages.Models
         public virtual Address Address1 { get; set; }
         public virtual ICollection<Department> Departments { get; set; }
         public virtual ICollection<Manager> Managers { get; set; }
-        public virtual ICollection<Permission> Permissions { get; set; }
+        public virtual ICollection<Permissions> Permissions { get; set; }
         public virtual ICollection<Title> Titles { get; set; }
     }
 }
